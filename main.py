@@ -45,8 +45,6 @@ def get_orders():
     order = get_orders_from_queue()
     if order:
         return jsonify(order), 200
-    else:
-        return jsonify({"message": "No orders available"}), 404
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=os.getenv('PORT', 2955))
